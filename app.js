@@ -36,7 +36,7 @@ const check_age = (obj) => {
 
   Name.addEventListener('focusout', (event) => {
       if (Name.value.length <=2 || Name.value=='' ) {
-        // event.target.style.background = 'pink';
+
     Name.classList.replace('OK', 'checkValue');
 }   else {
     event.target.style.background = 'seagreen';
@@ -44,6 +44,23 @@ const check_age = (obj) => {
 }
   });
 
+  age.addEventListener('focusout', (event) => {
+    if (age.value== '') {
+
+  age.classList.replace('OK', 'checkValue');
+}   else {
+  event.target.style.background = 'seagreen';
+  age.classList.replace('checkValue', 'OK');
+}
+});
+email.addEventListener('focusout', (event) => {
+    if (email.value.length <=2 || Name.value=='' ) {
+  email.classList.replace('OK', 'checkValue');
+}   else {
+  email.target.style.background = 'seagreen';
+  email.classList.replace('checkValue', 'OK');
+}
+});
 
 window.onload=function(){
 
