@@ -1,0 +1,20 @@
+.wrap {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
+input{
+    
+    
+}
+
+.checkValue {
+    border-color: tomato !important;
+    background: salmon !important;
+}
+
+.OK {
+    border-color: seagreen !important;
+}
