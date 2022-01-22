@@ -12,9 +12,11 @@ input {
 .checkValue {
     border-color: tomato !important;
     background: salmon !important;
-    border-width: 3px;;
+    border-width: 3px;
 }
 
 .OK {
     border-color: seagreen !important;
+    border-width: 3px;
+    background: transparent !important;
 }
