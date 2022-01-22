@@ -5,9 +5,14 @@
     margin-top: 2em;
 }
 
+input {
+    background: transparent !important;
+}
+
 .checkValue {
     border-color: tomato !important;
     background: salmon !important;
+    border-width: 3px;;
 }
 
 .OK {

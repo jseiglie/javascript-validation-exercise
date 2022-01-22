@@ -2,8 +2,11 @@ const Name = document.querySelector('#Name');
 const email = document.querySelector('#email');
 const age = document.querySelector('#age');
 const myBtn = document.querySelector('#myBtn');
-const form = document.querySelector('form')
+const form = document.querySelector('#form')
 const formInner = {Name, email, age};
+
+
+window.onload=function(){}
 
 const check_Name = (obj) => {
     if(obj.Name != null && obj.Name.length >= 2){
@@ -39,55 +42,57 @@ const check_age = (obj) => {
 
     Name.classList.replace('OK', 'checkValue');
 }   else {
-    event.target.style.background = 'seagreen';
+  
     Name.classList.replace('checkValue', 'OK');
 }
   });
 
   age.addEventListener('focusout', (event) => {
-    if (age.value== '') {
-
+    if (age.value== '' || age.value.length>2) {
   age.classList.replace('OK', 'checkValue');
 }   else {
-  event.target.style.background = 'seagreen';
+ 
   age.classList.replace('checkValue', 'OK');
 }
 });
 email.addEventListener('focusout', (event) => {
-    if (email.value.length <=2 || Name.value=='' ) {
+    if (email.value.length <=5 || email.value=='' ) {
   email.classList.replace('OK', 'checkValue');
 }   else {
-  email.target.style.background = 'seagreen';
   email.classList.replace('checkValue', 'OK');
 }
 });
 
-window.onload=function(){
+const Validate = (obj) => {
+  for (let value in obj) {
 
-
-  const Validate = (obj) => {
-    for (let value in obj) {
- 
-  if (obj[value] == 'Name') {
-    check_Name(obj);
-  }; 
-  if (obj[value] == 'email') {
-    check_email(obj);
-  };
-  if (obj[value] == 'age') {
-    check_age(obj);
-  };
+if (obj[value] == 'Name') {
+  check_Name(obj);
+  console.log('aqui')
+}; 
+if (obj[value] == 'email') {
+  check_email(obj);
+};
+if (obj[value] == 'age') {
+  check_age(obj);
+};
 } 
-  }
-
-  
-  
-
+}
 
   form.addEventListener('submit', e=> {
-      e.preventDefault();
-   Validate(formInner)});
-}
+   e.preventDefault();
+   if (
+    Name.classList.contains("OK") &&
+    age.classList.contains("OK") &&
+    email.classList.contains("OK")
+   )  {console.log('All looks good');
+   alert('Form away');
+ } else {
+   console.log("Check values");
+   alert("Something seems fishy.");
+ }
+});
+  //  Validate(formInner);});
 
 //   Name.addEventListener("keyup", check_Name(formInner));
 //   email.addEventListener("keyup", check_email(formInner));
